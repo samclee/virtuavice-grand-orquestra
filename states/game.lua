@@ -1,8 +1,12 @@
 local Game = {}
 
 local Tera = OverworldChar:new(
-  {x = 10, y = 10, idle = anims.tera_idle, walk = anims.tera_walk}
+  {x = 400, y = 300, idle = anims.tera_idle, walk = anims.tera_walk}
 )
+
+local chests = {
+  Chest:new({x = 500, y = 300, open = assets.chest_open, closed = assets.chest_closed, convo = 2})
+}
 
 function Game:enter(from)
 
@@ -19,15 +23,23 @@ function Game:update(dt)
   Tera:update(dt)
   Tera:move(dx, dy)
   s:lookAt(Tera.pos.x, Tera.pos.y)
+
+  if input:pressed 'action' then
+    for _,c in pairs(chests) do
+      c:check(Tera.pos)
+    end
+  end
 end
 
 function Game:draw()
 s:on()
-  
+  lg.draw(assets.rooms,0,0)
+
+  for _,c in pairs(chests) do
+    c:draw()
+  end
+
   Tera:draw()
-
-
-  
 s:off()
 end
 

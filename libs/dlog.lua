@@ -36,6 +36,13 @@ dlog.drawPortrait = function(self)
   lg.draw(self.portrait, self.x+self.padding_x, self.y+self.padding_y)
   lg.setLineWidth(5)
   lg.rectangle('line', self.x+self.padding_x, self.y+self.padding_y, 180, 180)
+
+  lg.setColor(0,0,0,0.5)
+  lg.rectangle('fill', self.x+self.padding_x, self.y+self.padding_y + 140, 180,40)
+
+  lg.setFont(fonts.name)
+  lg.setColor(1,1,1)
+  lg.print(self.name, self.x+self.padding_x + 6, self.y+self.padding_y + 143)
 end
 
 local function new(font, x, y, w, h)
@@ -64,6 +71,10 @@ end
 
 function dlog:setChoice(choice)
   self.cur_choice = choice
+end
+
+function dlog:setName(name)
+  self.name = name
 end
 
 function dlog:setPortrait(img)

@@ -23,6 +23,9 @@ end
 
 function OverworldChar:draw()
   self.cur_anim:draw(charsheet, self.pos.x, self.pos.y, 0, self.facing * self.scale, self.scale, self.w/2, self.h/2)
+  lg.setColor(1,0,0)
+  lg.circle('fill', self.pos.x, self.pos.y, 10)
+  lg.setColor(1,1,1)
 end
 
 function OverworldChar:move(dx, dy)

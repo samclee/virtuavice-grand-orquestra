@@ -42,6 +42,7 @@ anims.freya_idle = anim8.newAnimation(char_grid(5,1), 1)
 anims.freya_walk = anim8.newAnimation(char_grid(5,1, 6,1), 0.2)
 
 OverworldChar = require 'classes.OverworldChar'
+Chest = require 'classes.Chest'
 
 states = {}
 statenames = {'opening', 'title', 'game', 'battle', 'convo', 'credits'}
@@ -54,6 +55,7 @@ function love.load()
   gs.registerEvents()
   fonts.big = assets.v(35)
   fonts.dialog = assets.v(24)
+  fonts.name = assets.v(16)
   gs.switch(states.title)
 end
 

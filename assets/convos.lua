@@ -9,18 +9,18 @@ convos[1] = function()
   msg 'The Demon King has rampaged long enough.'
 
   option 'Kill'
-  option 'Save'
+  option 'Reason'
   menu 'What will I do?'
 
   if selection 'Kill' then
     msg 'Do I really want to kill him?'
-    msg 'Is it possible he\'s still a good person'
-  elseif selection 'Save' then
+    msg 'Am I capable of that?'
+  elseif selection 'Reason' then
     msg 'Do I really want to save him?'
     msg 'After everthing he\'s done?'
   end
 
-  msg 'This...is not an easy choice'
+  msg 'This...is not an easy choice. I should consult my party.'
 end
 
 convos[2] = function()

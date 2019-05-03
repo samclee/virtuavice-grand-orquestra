@@ -20,7 +20,7 @@ end
 function interpretPkg(pkg)
   choices = pkg.options
   box:setMsg(pkg.msg, choices)
-
+  box:setName(pkg.name)
   box:setPortrait(portraits[pkg.portrait])
 end
 
