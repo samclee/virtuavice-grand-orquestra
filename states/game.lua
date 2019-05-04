@@ -9,7 +9,7 @@ local chests = {
 }
 
 function Game:enter(from)
-
+  s:fadeTo({1,1,1,0},2)
 end
 
 function Game:resume(from)

@@ -45,7 +45,7 @@ OverworldChar = require 'classes.OverworldChar'
 Chest = require 'classes.Chest'
 
 states = {}
-statenames = {'opening', 'title', 'game', 'battle', 'convo', 'credits'}
+statenames = {'opening', 'title', 'game', 'battle', 'convo', 'credits', 'opening2'}
 for _,n in pairs(statenames) do
   states[n] = require ('states.'.. n)
 end
@@ -56,11 +56,12 @@ function love.load()
   fonts.big = assets.v(35)
   fonts.dialog = assets.v(24)
   fonts.name = assets.v(16)
-  gs.switch(states.title)
+  gs.switch(states.opening)
 end
 
 function love.update(dt)
   input:update()
+  ti.update(dt)
 end
 
 function love.keypressed(k)
@@ -69,4 +70,10 @@ function love.keypressed(k)
   elseif k == 'escape' then
     love.event.quit()
   end
+end
+
+function fadeOut(nextState, t, c)
+  t = t or 0.1
+  s:setColorTo({1, 1, 1, 0})
+  ti.tween(t,s,{_cur_color = {1,1,1,1}},'linear',function() gs.switch(states[nextState]) end)
 end

@@ -97,9 +97,15 @@ function ssss:rotate(phi)
   self._rot = self._rot + phi
 end
 
+function ssss:rotateTo(phi)
+  self._rot = phi
+end
+
 function ssss:zoom()
 
 end
+
+
 
 -- that part that bites push
 function ssss:setFullscreen(isFullscreen)
@@ -157,6 +163,12 @@ end
 
 function ssss:setDraw(isDrawing)
   self._drawing = isDrawing
+end
+
+function ssss:reset()
+  self:lookAt(400, 300)
+  self:rotateTo(0)
+  self:setColorTo({1,1,1,0})
 end
 
 return ssss
