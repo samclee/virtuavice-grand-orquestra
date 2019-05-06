@@ -45,7 +45,7 @@ end
 
 function Game:keypressed(k)
   if k == 'a' then
-    gs.push(states.convo, convos[1])
+    gs.push(states.convo, convos[4])
   end
 end
 

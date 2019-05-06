@@ -36,4 +36,44 @@ convos[2] = function()
   end
 end
 
+convos[3] = function()
+  portrait 'tera1'
+  name 'Tera'
+  
+  msg 'I can\'t hold back.'
+  msg 'And I won\'t give up!'
+
+  portrait(nil)
+
+  msg 'Tera\'s resolve is unbreakable!'
+  msg 'Defense UP!'
+
+  portrait 'tera1'
+  name 'Tera'
+
+  msg 'EAT THIS!'
+end
+
+convos[4] = function()
+  option 'a'
+  option 'b'
+  menu '?'
+
+  if selection 'a' then
+    msg 'ah, so its a'
+    
+    option 'c'
+    option 'd'
+    menu '?'
+
+    if selection 'c' then
+      msg 'its c'
+    elseif selection 'd' then
+      msg 'its d'
+    end
+  elseif selection 'b' then
+
+  end
+end
+
 return convos

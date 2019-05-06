@@ -13,6 +13,7 @@ anim8 = require 'libs.anim8'
 dlog = require 'libs.dlog'
 
 convos = require 'assets.convos'
+love.graphics.setDefaultFilter('nearest', 'nearest')
 
 input = baton.new {
   controls = {
@@ -42,6 +43,7 @@ anims.freya_idle = anim8.newAnimation(char_grid(5,1), 1)
 anims.freya_walk = anim8.newAnimation(char_grid(5,1, 6,1), 0.2)
 
 OverworldChar = require 'classes.OverworldChar'
+TalkChar = require 'classes.TalkChar'
 Chest = require 'classes.Chest'
 
 states = {}
@@ -56,7 +58,7 @@ function love.load()
   fonts.big = assets.v(35)
   fonts.dialog = assets.v(24)
   fonts.name = assets.v(16)
-  gs.switch(states.opening)
+  gs.switch(states.game)
 end
 
 function love.update(dt)
