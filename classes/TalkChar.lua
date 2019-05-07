@@ -7,7 +7,7 @@ function TalkChar:initialize(p)
 
   self.convo = p.convo
 
-  self.scale = 2
+  self.scale = 1
   self.w = 72
   self.h = 72
   self.talked = false

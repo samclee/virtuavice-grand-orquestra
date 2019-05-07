@@ -1,12 +1,11 @@
 local Game = {}
 
 local Tera = OverworldChar:new(
-  {x = 400, y = 300, idle = anims.tera_idle, walk = anims.tera_walk}
+  {x = 533, y = 1305, idle = anims.tera_idle, walk = anims.tera_walk}
 )
 
 local chars = {
-  TalkChar:new({x = 500, y = 300, idle = anims.neme_walk, convo = 2}),
-  TalkChar:new({x = 800, y = 500, idle = anims.freya_walk, convo = 2})
+
 }
 
 function Game:enter(from)
@@ -38,7 +37,7 @@ end
 
 function Game:draw()
 s:on()
-  lg.draw(assets.rooms,0,0)
+  lg.draw(assets.outside,0,0,0,2.5,2.5)
 
   for _,c in pairs(chars) do
     c:draw()

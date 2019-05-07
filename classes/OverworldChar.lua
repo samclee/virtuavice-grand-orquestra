@@ -9,9 +9,9 @@ function OverworldChar:initialize(p)
 
   self.facingRight = true
   self.dv = vec(0, 0)
-  self.speed = 2
+  self.speed = 3
 
-  self.scale = 2
+  self.scale = 1
   self.facing = 1
   self.w = 72
   self.h = 72
@@ -23,9 +23,6 @@ end
 
 function OverworldChar:draw()
   self.cur_anim:draw(charsheet, self.pos.x, self.pos.y, 0, self.facing * self.scale, self.scale, self.w/2, self.h/2)
-  lg.setColor(1,0,0)
-  lg.circle('fill', self.pos.x, self.pos.y, 10)
-  lg.setColor(1,1,1)
 end
 
 function OverworldChar:move(dx, dy)
