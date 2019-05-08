@@ -31,7 +31,7 @@ end
 
 function Opening:draw()
   s:on()
-  lg.setColor(67/255, 192/255, 251/255)
+  lg.setColor(skyColor)
   lg.rectangle('fill', 0, 0, 800, 600)
 
   lg.setColor(imageColor)

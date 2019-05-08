@@ -4,9 +4,9 @@ convos[1] = function()
   portrait 'tera1'
   name 'Tera'
   
-  msg 'I have to stop this.'
+  msg 'We have to stop the Demon King'
 
-  msg 'The Demon King has rampaged long enough.'
+  msg 'The entire world is at stake'
 
   option 'Kill'
   option 'Reason'
@@ -20,7 +20,7 @@ convos[1] = function()
     msg 'After everthing he\'s done?'
   end
 
-  msg 'This...is not an easy choice. I should consult my party.'
+  msg 'This...is not an easy choice...'
 end
 
 convos[2] = function()

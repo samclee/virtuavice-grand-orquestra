@@ -11,7 +11,7 @@ function OverworldChar:initialize(p)
   self.dv = vec(0, 0)
   self.speed = 3
 
-  self.scale = 1
+  self.scale = 1.2
   self.facing = 1
   self.w = 72
   self.h = 72
@@ -42,7 +42,11 @@ function OverworldChar:move(dx, dy)
     self.facingRight = true
     self.facing = 1
   end
+end
 
+function OverworldChar:moveTowards(pos)
+  local dir = self.pos - pos
+  self:move(dir.x, dir.y)
 end
 
 return OverworldChar

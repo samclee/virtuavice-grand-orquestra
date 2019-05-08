@@ -79,13 +79,15 @@ function ssss:scale_off()
 end
 
 function ssss:off()
-  -- drawing
+  love.graphics.pop()
+
+  self:scale_on()
   if self._drawing then
     love.graphics.setColor(self._cur_color)
     love.graphics.rectangle('fill', 0, 0, 800, 600)
     love.graphics.setColor(1, 1, 1)
   end
-  love.graphics.pop()
+  self:scale_off()
 end
 
 -- the part that bites hump.camera

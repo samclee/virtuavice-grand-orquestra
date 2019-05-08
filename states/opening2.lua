@@ -1,7 +1,7 @@
 local Opening2 = {}
-local camy = 300
 local hgt = 1800
 local centerBtm = hgt - 300
+local camy = 300
 
 function Opening2:enter(from)
   lg.setFont(fonts.dialog)
@@ -23,8 +23,8 @@ end
 
 function Opening2:draw()
   s:on()
-  lg.setColor(67/255, 192/255, 251/255)
-  lg.rectangle('fill', 0, 0, 800, 1800)
+  lg.setColor(skyColor)
+  lg.rectangle('fill', 0, 0, 800, 600)
 
   --draw text
   lg.setColor(0,0,0)
@@ -39,6 +39,12 @@ function Opening2:draw()
   lg.setColor(1,1,1)
 
   s:off()
+end
+
+function Opening2:keypressed(k)
+  if k == 'q' then
+    camy = centerBtm
+  end
 end
 
 return Opening2

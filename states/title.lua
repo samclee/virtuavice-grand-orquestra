@@ -16,14 +16,14 @@ function Title:update(dt)
 
   if input:pressed 'action' then
     ti.cancel(handle)
-    fadeOut('game')
+    fadeOut('outdoor',2)
   end
 end
 
 function Title:draw()
-  s:on()
+s:on()
 
-  lg.setColor(67/255, 192/255, 251/255)
+  lg.setColor(skyColor)
   lg.rectangle('fill', 0, 0, 800, 600)
 
   lg.setColor(0,0,0)
@@ -37,9 +37,8 @@ function Title:draw()
 
   lg.setFont(fonts.big)
   lg.printf('GAME TITLE/LOGO',0,200,800,'center')
-
   
-  s:off()
+s:off()
 end
 
 return Title

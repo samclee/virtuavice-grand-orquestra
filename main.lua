@@ -14,6 +14,7 @@ dlog = require 'libs.dlog'
 
 convos = require 'assets.convos'
 love.graphics.setDefaultFilter('nearest', 'nearest')
+skyColor = {178/255, 232/255, 255/255,1}
 
 input = baton.new {
   controls = {
@@ -45,9 +46,10 @@ anims.freya_walk = anim8.newAnimation(char_grid(5,1, 6,1), 0.2)
 OverworldChar = require 'classes.OverworldChar'
 TalkChar = require 'classes.TalkChar'
 Chest = require 'classes.Chest'
+Portal = require 'classes.Portal'
 
 states = {}
-statenames = {'opening', 'title', 'game', 'battle', 'convo', 'credits', 'opening2'}
+statenames = {'opening', 'title', 'outdoor', 'battle', 'convo', 'credits', 'opening2', 'indoor', 'roof'}
 for _,n in pairs(statenames) do
   states[n] = require ('states.'.. n)
 end
@@ -58,7 +60,7 @@ function love.load()
   fonts.big = assets.v(35)
   fonts.dialog = assets.v(24)
   fonts.name = assets.v(16)
-  gs.switch(states.game)
+  gs.switch(states.outdoor)
 end
 
 function love.update(dt)
@@ -76,6 +78,7 @@ end
 
 function fadeOut(nextState, t, c)
   t = t or 0.1
+  c = c or {1,1,1,1}
   s:setColorTo({1, 1, 1, 0})
-  ti.tween(t,s,{_cur_color = {1,1,1,1}},'linear',function() gs.switch(states[nextState]) end)
+  ti.tween(t,s,{_cur_color = c},'linear',function() gs.switch(states[nextState]) end)
 end

@@ -29,7 +29,7 @@ function Chest:draw()
   end
   --[[lg.setColor(1,0,0)
   lg.circle('line', self.pos.x, self.pos.y, 100)
-  lg.setColor(1,1,1)]]
+  lg.setColorc(1,1,1)]]
 
 end
 
