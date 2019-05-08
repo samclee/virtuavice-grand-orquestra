@@ -25,6 +25,7 @@ function interpretPkg(pkg)
 end
 
 function Convo:update(dt)
+  box:update()
   -- input
   -- cursor movement
   if input:pressed 'left' then

@@ -24,7 +24,7 @@ end
 function Opening2:draw()
   s:on()
   lg.setColor(skyColor)
-  lg.rectangle('fill', 0, 0, 800, 600)
+  lg.rectangle('fill', 0, 0, 800, 1800)
 
   --draw text
   lg.setColor(0,0,0)

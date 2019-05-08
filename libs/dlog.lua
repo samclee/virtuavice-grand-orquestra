@@ -16,7 +16,8 @@ end
 
 dlog.drawText = function(self)
 	lg.setFont(self.font)
-	lg.printf(self.msg, self.offset + self.x + self.padding_x, self.y + self.padding_y, self.w - 2 * self.padding_x - self.offset, 'left')
+  local cur_msg = string.sub(self.msg, 0, self.cur_char)
+	lg.printf(cur_msg, self.offset + self.x + self.padding_x, self.y + self.padding_y, self.w - 2 * self.padding_x - self.offset, 'left')
 end
 
 dlog.drawChoices = function(self)
@@ -55,17 +56,25 @@ local function new(font, x, y, w, h)
 		padding_x = 15,
 		padding_y = 15,
     offset = 210,
-		msg = '',
+		
+    msg = '',
 		active = true,
     portrait = nil,
     cur_choice = 1,
-    name = nil
+    name = nil,
+
+    msg_len = 0,
+    cur_char = 0,
+
+    cur_time = 0
 	}
 	return setmetatable(d, dlog)
 end
 
 function dlog:setMsg(msg, choices)
 	self.msg = msg
+  self.cur_char = 0
+  self.msg_len = string.len(msg)
   self.choices = choices
 end
 
@@ -79,6 +88,16 @@ end
 
 function dlog:setPortrait(img)
   self.portrait = img
+end
+
+function dlog:update()
+  self.cur_time = self.cur_time + 1
+  if self.cur_time > 3 then
+    self.cur_time = 0
+    if self.cur_char < self.msg_len then
+      self.cur_char = self.cur_char + 1
+    end
+  end
 end
 
 function dlog:draw()

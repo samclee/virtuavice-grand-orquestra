@@ -37,7 +37,9 @@ s:off()
 end
 
 function Outdoor:keypressed(k)
-
+  if k == 'c' then
+    gs.push(states.convo, convos[1])
+  end
 end
 
 return Outdoor
