@@ -47,6 +47,7 @@ OverworldChar = require 'classes.OverworldChar'
 TalkChar = require 'classes.TalkChar'
 Chest = require 'classes.Chest'
 Portal = require 'classes.Portal'
+CharTrain = require 'classes.CharTrain'
 
 states = {}
 statenames = {'opening', 'title', 'outdoor', 'battle', 'convo', 'credits', 'opening2', 'indoor', 'roof'}

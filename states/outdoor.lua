@@ -1,8 +1,6 @@
 local Outdoor = {}
 
-local Tera = OverworldChar:new(
-  {x = 533, y = 1305, idle = anims.tera_idle, walk = anims.tera_walk}
-)
+local Party = CharTrain:new({533, 1305, 493, 1395, 573, 1395})
 
 local inPortal = Portal:new(
   {x = 546, y = 592, r = 25, to = 'indoor'}
@@ -10,16 +8,17 @@ local inPortal = Portal:new(
 
 function Outdoor:enter(from)
   s:fadeTo({1,1,1,0},2)
+  s:lookAt(Party.chars[1].pos.x, Party.chars[1].pos.y)
 end
 
 function Outdoor:update(dt)
   s:update(dt)
   local dx, dy = input:get 'move'
 
-  Tera:update(dt)
-  Tera:move(dx, dy)
-  s:lookAt(Tera.pos.x, Tera.pos.y)
-  inPortal:check(Tera.pos)
+  Party:update(dt, dx, dy)
+  s:lookAt(Party.chars[1].pos.x, Party.chars[1].pos.y)
+  
+  inPortal:check(Party.chars[1].pos)
 end
 
 function Outdoor:draw()
@@ -32,7 +31,7 @@ s:scale_off()
 
 s:on()
   lg.draw(assets.outdoor,0,0,0,2.5,2.5)
-  Tera:draw()
+  Party:draw()
 s:off()
 end
 

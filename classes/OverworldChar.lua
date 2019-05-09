@@ -45,8 +45,12 @@ function OverworldChar:move(dx, dy)
 end
 
 function OverworldChar:moveTowards(pos)
-  local dir = self.pos - pos
+  local dir = pos - self.pos
   self:move(dir.x, dir.y)
+end
+
+function OverworldChar:beIdle()
+  self.cur_anim = self.idle
 end
 
 return OverworldChar
