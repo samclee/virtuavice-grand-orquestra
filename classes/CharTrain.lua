@@ -19,12 +19,15 @@ function CharTrain:update(dt, dx, dy)
   self.chars[3]:update(dt)
 
   self.chars[1]:move(dx, dy)
-  if (self.chars[2].pos - self.chars[1].pos):len() > 80 then
+  if (self.chars[2].pos - self.chars[1].pos):len() > 75 then
     self.chars[2]:moveTowards(self.chars[1].pos)
   end
-  if (self.chars[3].pos - self.chars[2].pos):len() > 80 then
+  if (self.chars[3].pos - self.chars[2].pos):len() > 75 then
     self.chars[3]:moveTowards(self.chars[2].pos)
   end
+
+  
+
 end
 
 function CharTrain:draw()

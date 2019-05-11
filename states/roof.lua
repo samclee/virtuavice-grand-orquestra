@@ -1,8 +1,8 @@
 local Roof = {}
 
-local Tera = OverworldChar:new(
-  {x = 153, y = 159, idle = anims.tera_idle, walk = anims.tera_walk}
-)
+local Boss = BossChar:new({x = 800, y = 159, to = 'opening'})
+
+local Party = CharTrain:new({153, 159, 153, 159, 153, 159})
 
 function Roof:enter()
   s:setColorTo({0,0,0,1})
@@ -13,9 +13,8 @@ function Roof:update(dt)
   s:update(dt)
   local dx, dy = input:get 'move'
 
-  Tera:update(dt)
-  Tera:move(dx, dy)
-  s:lookAt(Tera.pos.x, Tera.pos.y)
+  Party:update(dt, dx, dy)
+  s:lookAt(Party.chars[1].pos.x, Party.chars[1].pos.y)
 end
 
 function Roof:draw()
@@ -27,7 +26,8 @@ s:scale_off()
 
 s:on()
   lg.draw(assets.roof,0,0,0,2.5,2.5)
-  Tera:draw()
+  Party:draw()
+  Boss:draw()
 s:off()
 end
 

@@ -4,9 +4,9 @@ convos[1] = function()
   portrait 'tera1'
   name 'Tera'
   
-  msg 'We have to stop the Demon King'
+  msg 'aw shit time for adventure'
 
-  msg 'The entire world is at stake'
+  msg 'gonna kill that demon king'
 
   option 'Kill'
   option 'Reason'
@@ -20,23 +20,26 @@ convos[1] = function()
     msg 'After everthing he\'s done?'
   end
 
-  msg 'This...is not an easy choice...'
+  msg 'mmmm who cares'
+
+  portrait 'neme1'
+  name 'Neme'
+  msg 'o shit it me'
+
+  portrait 'freya1'
+  name 'Freya'
+  msg 'adsfadsfdsfa'
+
+  portrait(nil)
+  msg 'This coninued for 4 hours'
+
+  portrait 'tera1'
+  name 'Freya'
+  msg 'lets fuking kill him'
+
 end
 
 convos[2] = function()
-  msg 'Found one [Sword of Truth]'
-
-  option 'Toss'
-  option 'Equip'
-  menu 'Equip or Toss?'
-  if selection 'Equip' then
-    msg 'Equipped the weapon'
-  elseif selection 'Toss' then
-    msg 'Tossed weapon'
-  end
-end
-
-convos[3] = function()
   portrait 'tera1'
   name 'Tera'
   
@@ -54,26 +57,16 @@ convos[3] = function()
   msg 'EAT THIS!'
 end
 
-convos[4] = function()
-  option 'a'
-  option 'b'
-  menu '?'
 
-  if selection 'a' then
-    msg 'ah, so its a'
-    
-    option 'c'
-    option 'd'
-    menu '?'
+convos[3] = function()
+  portrait 'tera1'
+  name 'Tera'
+  
+  msg 'Special ability, wait for a second'
+  wait(5)
 
-    if selection 'c' then
-      msg 'its c'
-    elseif selection 'd' then
-      msg 'its d'
-    end
-  elseif selection 'b' then
+  msg 'Wbamo, I\'m back'
 
-  end
 end
 
 return convos

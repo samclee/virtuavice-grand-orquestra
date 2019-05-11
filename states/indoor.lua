@@ -1,11 +1,9 @@
 local Indoor = {}
 
-local Tera = OverworldChar:new(
-  {x = 857, y = 1249, idle = anims.tera_idle, walk = anims.tera_walk}
-)
+local Party = CharTrain:new({857, 1249, 857, 1349, 857, 1449})
 
 local roofPortal = Portal:new(
-  {x = 1116, y = 456, r = 25, to = 'roof'}
+  {x = 1129, y = 246, r = 25, to = 'roof'}
 )
 
 function Indoor:enter()
@@ -18,16 +16,16 @@ function Indoor:update(dt)
   s:update(dt)
   local dx, dy = input:get 'move'
 
-  Tera:update(dt)
-  Tera:move(dx, dy)
-  s:lookAt(Tera.pos.x, Tera.pos.y)
-  roofPortal:check(Tera.pos)
+  Party:update(dt, dx, dy)
+  s:lookAt(Party.chars[1].pos.x, Party.chars[1].pos.y)
+
+  roofPortal:check(Party.chars[1].pos)
 end
 
 function Indoor:draw()
 s:on()
   lg.draw(assets.indoor,0,0,0,2.5,2.5)
-  Tera:draw()
+  Party:draw()
 s:off()
 end
 

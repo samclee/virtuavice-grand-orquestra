@@ -1,19 +1,29 @@
-local Convo = {}
+local Battle1 = {}
 
 local dialog
 local box
 local choices = {}
 
-function Convo:enter(from, script)
+function Battle1:enter(from)
   self.from = from
   box = dlog(fonts.dialog, 15, 15, 770, 210, 210)
   dialog = Ero(script)
     :defineAttributes({
       'portrait',
-      'name'
+      'name',
+      'atk',
+      'dmg',
+      'wait'
     })
 
   interpretPkg(dialog:next())
+end
+
+function boxSleepFor(n)
+  if n == nil then return end
+
+  box.active = false
+  ti.after(n, function() box.active = true end)
 end
 
 function interpretPkg(pkg)
@@ -21,9 +31,13 @@ function interpretPkg(pkg)
   box:setMsg(pkg.msg, choices)
   box:setName(pkg.name)
   box:setPortrait(portraits[pkg.portrait])
+  boxSleepFor(pkg.wait)
+
 end
 
-function Convo:update(dt)
+function Battle1:update(dt)
+  s:update(dt)
+
   box:update()
   -- input
   -- cursor movement
@@ -47,17 +61,17 @@ function Convo:update(dt)
     if pkg ~= nil then
       interpretPkg(pkg)
     else
-      gs.pop()
+      print('switch states')
     end
   end
 end
 
-function Convo:draw() 
-  self.from:draw()
-  
-  s:scale_on()
+function Battle1:draw()
+  s:on()
+  lg.setColor(skyColor)
+  lg.rectangle('fill', 0, 0, 800, 600)
   box:draw()
-  s:scale_off()
+  s:off()
 end
 
-return Convo
+return Battle1

@@ -39,7 +39,7 @@ dlog.drawPortrait = function(self)
   lg.rectangle('line', self.x+self.padding_x, self.y+self.padding_y, 180, 180)
 
   lg.setColor(0,0,0,0.5)
-  lg.rectangle('fill', self.x+self.padding_x, self.y+self.padding_y + 140, 180,40)
+  lg.rectangle('fill', self.x+self.padding_x + 2, self.y+self.padding_y + 140, 176,38)
 
   lg.setFont(fonts.name)
   lg.setColor(1,1,1)

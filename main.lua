@@ -31,6 +31,10 @@ input = baton.new {
 }
 
 fonts = {}
+portraits = {}
+portraits.tera1 = assets.portraits.tera1
+portraits.neme1 = assets.portraits.neme1
+portraits.freya1 = assets.portraits.freya1
 
 -- animation
 anims = {}
@@ -48,9 +52,10 @@ TalkChar = require 'classes.TalkChar'
 Chest = require 'classes.Chest'
 Portal = require 'classes.Portal'
 CharTrain = require 'classes.CharTrain'
+BossChar = require 'classes.BossChar'
 
 states = {}
-statenames = {'opening', 'title', 'outdoor', 'battle', 'convo', 'credits', 'opening2', 'indoor', 'roof'}
+statenames = {'opening', 'title', 'outdoor', 'battle1', 'battle2', 'convo', 'credits', 'opening2', 'indoor', 'roof'}
 for _,n in pairs(statenames) do
   states[n] = require ('states.'.. n)
 end
