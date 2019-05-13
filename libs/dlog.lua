@@ -91,8 +91,10 @@ function dlog:setPortrait(img)
 end
 
 function dlog:update()
+  if not self.active then return end
+
   self.cur_time = self.cur_time + 1
-  if self.cur_time > 3 then
+  if self.cur_time > 2 then
     self.cur_time = 0
     if self.cur_char < self.msg_len then
       self.cur_char = self.cur_char + 1
@@ -102,6 +104,7 @@ end
 
 function dlog:draw()
 	if not self.active then return end
+
 	self:drawBg()
 	self:drawBorder()
   if self.portrait ~= nil then

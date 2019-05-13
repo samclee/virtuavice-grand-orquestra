@@ -61,11 +61,44 @@ end
 convos[3] = function()
   portrait 'tera1'
   name 'Tera'
-  
-  msg 'Special ability, wait for a second'
-  wait(5)
 
-  msg 'Wbamo, I\'m back'
+  msg 'Preboss convo'
+
+  msg 'blah blah blah'
+
+  msg 'time 4 fite'
+end
+
+convos[4] = function()
+  msg 'okay lets try this shit out'
+
+  option 'Tera + Neme'
+  option 'Neme + Freya'
+  menu 'Which combo should attack?'
+
+  if selection 'Tera + Neme' then
+    msg 'Blaze Cross!'
+    
+    wait(2)
+    atk({1,3})
+    msg('Critical damage!')
+  elseif selection 'Neme + Freya' then
+    msg 'Celestial Arrow!'
+    
+    wait(2)
+    atk({1,2})
+    msg('Highly effective!')
+  end
+
+  -- MUST RESET
+  wait(nil)
+  atk(nil)
+  portrait 'tera1'
+  name 'Tera'
+  msg 'Wowee what a lot of dmg'
+
+  msg 'end'
+
 
 end
 

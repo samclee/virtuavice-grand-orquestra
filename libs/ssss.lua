@@ -170,7 +170,6 @@ end
 function ssss:reset()
   self:lookAt(400, 300)
   self:rotateTo(0)
-  self:setColorTo({1,1,1,0})
 end
 
 return ssss

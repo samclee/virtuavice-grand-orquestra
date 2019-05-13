@@ -1,6 +1,6 @@
 local Indoor = {}
 
-local Party = CharTrain:new({857, 1249, 857, 1349, 857, 1449})
+local Party = CharTrain:new({857, 1249, 857, 1249, 857, 1249})
 
 local roofPortal = Portal:new(
   {x = 1129, y = 246, r = 25, to = 'roof'}

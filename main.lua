@@ -53,6 +53,7 @@ Chest = require 'classes.Chest'
 Portal = require 'classes.Portal'
 CharTrain = require 'classes.CharTrain'
 BossChar = require 'classes.BossChar'
+BattleChar = require'classes.BattleChar'
 
 states = {}
 statenames = {'opening', 'title', 'outdoor', 'battle1', 'battle2', 'convo', 'credits', 'opening2', 'indoor', 'roof'}
@@ -87,4 +88,11 @@ function fadeOut(nextState, t, c)
   c = c or {1,1,1,1}
   s:setColorTo({1, 1, 1, 0})
   ti.tween(t,s,{_cur_color = c},'linear',function() gs.switch(states[nextState]) end)
+end
+
+function spiralOut(nextState)
+  t = 4
+  c = {1,1,1,1}
+  s:setColorTo({1, 1, 1, 0})
+  ti.tween(t,s,{_cur_color = c, _rot = math.pi},'out-cubic',function() gs.switch(states[nextState]) end)
 end

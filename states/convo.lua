@@ -4,6 +4,13 @@ local dialog
 local box
 local choices = {}
 
+function Convo:interpretPkg(pkg)
+  choices = pkg.options
+  box:setMsg(pkg.msg, choices)
+  box:setName(pkg.name)
+  box:setPortrait(portraits[pkg.portrait])
+end
+
 function Convo:enter(from, script)
   self.from = from
   box = dlog(fonts.dialog, 15, 15, 770, 210, 210)
@@ -13,14 +20,7 @@ function Convo:enter(from, script)
       'name'
     })
 
-  interpretPkg(dialog:next())
-end
-
-function interpretPkg(pkg)
-  choices = pkg.options
-  box:setMsg(pkg.msg, choices)
-  box:setName(pkg.name)
-  box:setPortrait(portraits[pkg.portrait])
+  self:interpretPkg(dialog:next())
 end
 
 function Convo:update(dt)
@@ -45,7 +45,7 @@ function Convo:update(dt)
     end
     
     if pkg ~= nil then
-      interpretPkg(pkg)
+      self:interpretPkg(pkg)
     else
       gs.pop()
     end

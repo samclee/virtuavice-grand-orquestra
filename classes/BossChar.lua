@@ -18,14 +18,10 @@ function BossChar:update(dt)
 end
 
 function BossChar:draw()
+  --[[lg.setColor(1,0,0)
+  lg.circle('line',self.pos.x, self.pos.y,300)
+  lg.setColor(1,1,1)]]
   lg.draw(self.spr,self.pos.x, self.pos.y, 0, self.scale, self.scale, self.w/2, self.h/2)
-end
-
-function BossChar:check(player_pos)
-  if self.talked == false and self.pos:dist(player_pos) < 100 then
-    self.talked = true
-    gs.switch(states[self.to])
-  end
 end
 
 return BossChar

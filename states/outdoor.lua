@@ -1,6 +1,6 @@
 local Outdoor = {}
 
-local Party = CharTrain:new({533, 1305, 493, 1395, 573, 1395})
+local Party = CharTrain:new({533, 1305, 493, 1345, 523, 1395})
 
 local inPortal = Portal:new(
   {x = 546, y = 592, r = 25, to = 'indoor'}
