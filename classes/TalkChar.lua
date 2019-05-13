@@ -7,18 +7,17 @@ function TalkChar:initialize(p)
 
   self.convo = p.convo
 
-  self.scale = 1
+  self.scale = 1.2
   self.w = 72
   self.h = 72
   self.talked = false
 end
 
-function TalkChar:update(dt)
-  self.idle:update(dt)
-end
-
 function TalkChar:draw()
   self.idle:draw(charsheet, self.pos.x, self.pos.y, 0, self.scale, self.scale, self.w/2, self.h/2)
+  lg.setColor(1,0,0)
+  lg.circle('line',self.pos.x, self.pos.y,100)
+  lg.setColor(1,1,1)
 end
 
 function TalkChar:check(player_pos)

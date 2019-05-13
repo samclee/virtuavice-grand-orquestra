@@ -35,6 +35,7 @@ portraits = {}
 portraits.tera1 = assets.portraits.tera1
 portraits.neme1 = assets.portraits.neme1
 portraits.freya1 = assets.portraits.freya1
+portraits.boss1 = assets.portraits.boss1
 
 -- animation
 anims = {}
@@ -56,7 +57,7 @@ BossChar = require 'classes.BossChar'
 BattleChar = require'classes.BattleChar'
 
 states = {}
-statenames = {'opening', 'title', 'outdoor', 'battle1', 'battle2', 'convo', 'credits', 'opening2', 'indoor', 'roof'}
+statenames = {'opening', 'title', 'outdoor', 'battle1', 'battle2', 'convo', 'credits', 'opening2', 'indoor', 'roof', 'roof2'}
 for _,n in pairs(statenames) do
   states[n] = require ('states.'.. n)
 end
@@ -67,7 +68,7 @@ function love.load()
   fonts.big = assets.v(35)
   fonts.dialog = assets.v(24)
   fonts.name = assets.v(16)
-  gs.switch(states.outdoor)
+  gs.switch(states.roof)
 end
 
 function love.update(dt)
@@ -90,9 +91,9 @@ function fadeOut(nextState, t, c)
   ti.tween(t,s,{_cur_color = c},'linear',function() gs.switch(states[nextState]) end)
 end
 
-function spiralOut(nextState)
+function spiralOut(nextState,convo_num, to)
   t = 4
   c = {1,1,1,1}
   s:setColorTo({1, 1, 1, 0})
-  ti.tween(t,s,{_cur_color = c, _rot = math.pi},'out-cubic',function() gs.switch(states[nextState]) end)
+  ti.tween(t,s,{_cur_color = c, _rot = math.pi},'out-cubic',function() gs.switch(states[nextState], convo_num, to) end)
 end

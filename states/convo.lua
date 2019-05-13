@@ -11,8 +11,9 @@ function Convo:interpretPkg(pkg)
   box:setPortrait(portraits[pkg.portrait])
 end
 
-function Convo:enter(from, script)
+function Convo:enter(from, script retMsg)
   self.from = from
+  self.retMsg = retMsg
   box = dlog(fonts.dialog, 15, 15, 770, 210, 210)
   dialog = Ero(script)
     :defineAttributes({
@@ -47,7 +48,7 @@ function Convo:update(dt)
     if pkg ~= nil then
       self:interpretPkg(pkg)
     else
-      gs.pop()
+      gs.pop(self.retMsg)
     end
   end
 end

@@ -10,7 +10,7 @@ function Roof:enter()
 end
 
 function Roof:resume()
-  spiralOut('battle1')
+  spiralOut('battle1', 4, 'roof2')
 end
 
 function Roof:update(dt)
@@ -20,7 +20,7 @@ function Roof:update(dt)
   Party:update(dt, dx, dy)
   s:lookAt(Party.chars[1].pos.x, Party.chars[1].pos.y)
 
-  if input:pressed 'action' and (Party.chars[1].pos - Boss.pos):len() < 300 then
+  if input:pressed 'action' and (Party.chars[1].pos - Boss.pos):len() < 200 then
     gs.push(states.convo, convos[3])
   end
 end

@@ -34,27 +34,32 @@ convos[1] = function()
   msg 'This coninued for 4 hours'
 
   portrait 'tera1'
-  name 'Freya'
+  name 'Tera'
   msg 'lets fuking kill him'
 
 end
 
 convos[2] = function()
   portrait 'tera1'
-  name 'Tera'
-  
-  msg 'I can\'t hold back.'
-  msg 'And I won\'t give up!'
+  name 'Tera' 
+  msg 'wow this fucker is tooooough'
 
-  portrait(nil)
+  portrait 'neme1'
+  name 'Neme' 
+  msg 'ikr this shit blows'
 
-  msg 'Tera\'s resolve is unbreakable!'
-  msg 'Defense UP!'
+  portrait 'tera1'
+  name 'Tera' 
+  msg 'yup'
+
+  portrait 'neme1'
+  name 'Neme' 
+  msg '..................'
 
   portrait 'tera1'
   name 'Tera'
-
-  msg 'EAT THIS!'
+  msg '..............'
+  msg 'well bye'
 end
 
 
@@ -70,7 +75,7 @@ convos[3] = function()
 end
 
 convos[4] = function()
-  msg 'okay lets try this shit out'
+  msg '=BATTLE START='
 
   option 'Tera + Neme'
   option 'Neme + Freya'
@@ -80,13 +85,13 @@ convos[4] = function()
     msg 'Blaze Cross!'
     
     wait(2)
-    atk({1,3})
+    atk({1,2})
     msg('Critical damage!')
   elseif selection 'Neme + Freya' then
     msg 'Celestial Arrow!'
     
     wait(2)
-    atk({1,2})
+    atk({1,3})
     msg('Highly effective!')
   end
 
@@ -97,9 +102,28 @@ convos[4] = function()
   name 'Tera'
   msg 'Wowee what a lot of dmg'
 
-  msg 'end'
+  portrait 'boss1'
+  name 'Boss'
+  msg 'lmao as if'
+  msg 'see ya bich'
+end
 
+convos[5] = function()
+  portrait 'tera1'
+  name 'Tera' 
+  msg 'gdsasasds'
 
+  portrait 'freya1'
+  name 'Freya' 
+  msg 'qwewqrewreewrqwerwerq'
+
+  portrait 'tera1'
+  name 'Tera' 
+  msg 'tvfvffvvtftvfvftvtfvtf'
+
+  portrait 'freya1'
+  name 'Freya'
+  msg 'good talk'
 end
 
 return convos
