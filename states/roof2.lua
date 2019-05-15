@@ -1,11 +1,11 @@
 local Roof2 = {}
 
 local Tera = OverworldChar:new({x = 600, y = 159, idle = anims.tera_idle, walk = anims.tera_walk})
-local Neme = TalkChar:new({x = 390, y = 70, idle = anims.neme_idle, convo = 2})
+local Neme = TalkChar:new({x = 320, y = 70, idle = anims.neme_idle, convo = 2})
 local Freya = TalkChar:new({x = 440, y = 220, idle = anims.freya_idle, convo = 5})
 
 
-local Boss = BossChar:new({x = 800, y = 159})
+local Boss = BossChar:new({x = 800, y = 159, convo = 6})
 
 function Roof2:enter()
   s:setColorTo({0,0,0,1})
@@ -14,7 +14,7 @@ end
 
 function Roof2:resume(from, retMsg)
   if retMsg == 'boss' then
-    spiralOut('battle1', 4, 'roof3')
+    spiralOut('battle1', 7, 'roof3')
   end
 end
 
@@ -27,10 +27,7 @@ function Roof2:update(dt)
   s:lookAt(Tera.pos.x, Tera.pos.y)
 
   if input:pressed 'action' then
-    if (Tera.pos - Boss.pos):len() < 100 then
-      gs.push(states.convo, convos[3])
-    end
-
+    Boss:check(Tera.pos)
     Neme:check(Tera.pos)
     Freya:check(Tera.pos)
   end

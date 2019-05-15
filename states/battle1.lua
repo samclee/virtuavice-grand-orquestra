@@ -41,11 +41,10 @@ end
 function Battle1:enter(from, convo_num, to)
   self.from = from
   self.to = to
-  print(self.to)
   s:reset()
   s:fadeTo({1,1,1,0},2)
   box = dlog(fonts.dialog, 15, 15, 770, 210, 210)
-  dialog = Ero(convos[4])
+  dialog = Ero(convos[convo_num])
     :defineAttributes({
       'portrait',
       'name',

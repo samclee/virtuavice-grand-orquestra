@@ -1,6 +1,6 @@
 local Roof = {}
 
-local Boss = BossChar:new({x = 800, y = 159, to = 'opening'})
+local Boss = BossChar:new({x = 800, y = 159, convo = 3})
 
 local Party = CharTrain:new({153, 159, 153, 159, 153, 159})
 
@@ -20,8 +20,8 @@ function Roof:update(dt)
   Party:update(dt, dx, dy)
   s:lookAt(Party.chars[1].pos.x, Party.chars[1].pos.y)
 
-  if input:pressed 'action' and (Party.chars[1].pos - Boss.pos):len() < 200 then
-    gs.push(states.convo, convos[3])
+  if input:pressed 'action' then
+    Boss:check(Party.chars[1].pos)
   end
 end
 

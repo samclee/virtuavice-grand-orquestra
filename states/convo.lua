@@ -11,7 +11,7 @@ function Convo:interpretPkg(pkg)
   box:setPortrait(portraits[pkg.portrait])
 end
 
-function Convo:enter(from, script retMsg)
+function Convo:enter(from, script, retMsg)
   self.from = from
   self.retMsg = retMsg
   box = dlog(fonts.dialog, 15, 15, 770, 210, 210)

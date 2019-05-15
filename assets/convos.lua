@@ -62,7 +62,6 @@ convos[2] = function()
   msg 'well bye'
 end
 
-
 convos[3] = function()
   portrait 'tera1'
   name 'Tera'
@@ -75,10 +74,10 @@ convos[3] = function()
 end
 
 convos[4] = function()
-  msg '=BATTLE START='
+  msg '=BATTLE1 START='
 
   option 'Tera + Neme'
-  option 'Neme + Freya'
+  option 'Tera + Freya'
   menu 'Which combo should attack?'
 
   if selection 'Tera + Neme' then
@@ -87,7 +86,7 @@ convos[4] = function()
     wait(2)
     atk({1,2})
     msg('Critical damage!')
-  elseif selection 'Neme + Freya' then
+  elseif selection 'Tera + Freya' then
     msg 'Celestial Arrow!'
     
     wait(2)
@@ -124,6 +123,38 @@ convos[5] = function()
   portrait 'freya1'
   name 'Freya'
   msg 'good talk'
+end
+
+convos[6] = function()
+  portrait 'tera1'
+  name 'Tera'
+
+  msg 'Preboss convo 2'
+
+  msg 'blah blah blah'
+
+  msg 'time 4 fite'
+
+  msg '...again'
+end
+
+convos[7] = function()
+  msg '=BATTLE2 START='
+
+  msg 'i dont feel like writing anymore'
+
+  msg 'okay yeah thats the end'
+end
+
+convos[8] = function()
+  portrait 'tera1'
+  name 'Tera'
+
+  msg 'yey we won'
+
+  msg 'w00t'
+
+  msg 'okay time for credits'
 end
 
 return convos
