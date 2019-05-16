@@ -49,11 +49,13 @@ anims.freya_idle = anim8.newAnimation(char_grid(5,1), 1)
 anims.freya_walk = anim8.newAnimation(char_grid(5,1, 6,1), 0.2)
 
 OverworldChar = require 'classes.OverworldChar'
-TalkChar = require 'classes.TalkChar'
-Chest = require 'classes.Chest'
-Portal = require 'classes.Portal'
 CharTrain = require 'classes.CharTrain'
+TalkChar = require 'classes.TalkChar'
 BossChar = require 'classes.BossChar'
+
+Portal = require 'classes.Portal'
+
+
 BattleChar = require'classes.BattleChar'
 
 states = {}
@@ -68,7 +70,7 @@ function love.load()
   fonts.big = assets.v(35)
   fonts.dialog = assets.v(24)
   fonts.name = assets.v(16)
-  gs.switch(states.roof)
+  gs.switch(states.outdoor)
 end
 
 function love.update(dt)

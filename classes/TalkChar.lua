@@ -14,7 +14,9 @@ function TalkChar:initialize(p)
 end
 
 function TalkChar:draw()
-  self.idle:draw(charsheet, self.pos.x, self.pos.y, 0, self.scale, self.scale, self.w/2, self.h/2)
+  if self.idle ~= nil then
+    self.idle:draw(charsheet, self.pos.x, self.pos.y, 0, self.scale, self.scale, self.w/2, self.h/2)
+  end
   --[[lg.setColor(1,0,0)
   lg.circle('line',self.pos.x, self.pos.y,80)
   lg.setColor(1,1,1)]]

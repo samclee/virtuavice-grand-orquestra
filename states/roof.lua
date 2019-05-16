@@ -10,7 +10,9 @@ function Roof:enter()
 end
 
 function Roof:resume()
-  spiralOut('battle1', 4, 'roof2')
+  if retMsg == 'boss' then
+    spiralOut('battle1', 4, 'roof2')
+  end
 end
 
 function Roof:update(dt)
