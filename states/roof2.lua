@@ -1,8 +1,8 @@
 local Roof2 = {}
 
 local Tera = OverworldChar:new({x = 600, y = 159, idle = anims.tera_idle, walk = anims.tera_walk})
-local Neme = TalkChar:new({x = 320, y = 70, idle = anims.neme_idle, convo = 2})
-local Freya = TalkChar:new({x = 440, y = 220, idle = anims.freya_idle, convo = 5})
+local Neme = TalkChar:new({x = 250, y = 70, convo = 2, sprx = 144})
+local Freya = TalkChar:new({x = 370, y = 220, convo = 5, sprx = 288})
 
 
 local Boss = BossChar:new({x = 800, y = 159, convo = 6})

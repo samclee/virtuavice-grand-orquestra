@@ -1,18 +1,10 @@
 from PIL import Image, ImageDraw
 import os
 
-f, e = os.path.splitext('vgo_logo.png') #<name><.ext>
+orig = Image.open('charsheetOriginal.png')
+pod = Image.open('bookpodium.png')
+augmented = Image.new('RGBA', (504, 72))
+augmented.paste(orig, (0, 0))
+augmented.paste(pod, (432, 0))
 
-im = Image.open('vgo_logo.png')
-im = im.convert('RGBA')
-pixels = im.getdata()
-
-newPixels = []
-for p in pixels:
-  if p[3] > 0:
-    newPixels.append((0, 0, 0, 255))
-  else:
-    newPixels.append(p)
-
-im.putdata(newPixels)
-im.save(f + '_clear.png', 'PNG')
+augmented.save('charsheet.png', 'PNG')

@@ -3,7 +3,7 @@ local TalkChar = class('TalkChar')
 function TalkChar:initialize(p)
   self.pos = vec(p.x, p.y)
 
-  self.idle = p.idle
+  self.quad = lg.newQuad(p.sprx, 0, 72, 72, charsheet:getWidth(), charsheet:getHeight())
 
   self.convo = p.convo
 
@@ -14,12 +14,10 @@ function TalkChar:initialize(p)
 end
 
 function TalkChar:draw()
-  if self.idle ~= nil then
-    self.idle:draw(charsheet, self.pos.x, self.pos.y, 0, self.scale, self.scale, self.w/2, self.h/2)
-  end
-  --[[lg.setColor(1,0,0)
+  lg.draw(charsheet, self.quad, self.pos.x, self.pos.y, 0, self.scale, self.scale, self.w/2, self.h/2)
+  lg.setColor(1,0,0)
   lg.circle('line',self.pos.x, self.pos.y,80)
-  lg.setColor(1,1,1)]]
+  lg.setColor(1,1,1)
 end
 
 function TalkChar:check(player_pos)
