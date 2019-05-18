@@ -86,7 +86,6 @@ function Battle1:update(dt)
     if pkg ~= nil then
       self:interpretPkg(pkg)
     else
-      print('switch states')
       gs.switch(states[self.to])
     end
   end

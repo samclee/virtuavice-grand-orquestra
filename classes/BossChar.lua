@@ -18,14 +18,15 @@ function BossChar:update(dt)
 end
 
 function BossChar:draw()
-  lg.setColor(1,0,0)
+  --[[lg.setColor(1,0,0)
   lg.circle('line',self.pos.x, self.pos.y,200)
-  lg.setColor(1,1,1)
+  lg.setColor(1,1,1)]]
   lg.draw(self.spr,self.pos.x, self.pos.y, 0, self.scale, self.scale, self.w/2, self.h/2)
 end
 
 function BossChar:check(player_pos)
   if self.pos:dist(player_pos) < 200 then
+    print('Talking to this person initiated convo ' .. self.convo)
     gs.push(states.convo, convos[self.convo], 'boss')
   end
 end

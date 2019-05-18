@@ -26,8 +26,6 @@ function CharTrain:update(dt, dx, dy)
     self.chars[3]:moveTowards(self.chars[2].pos)
   end
 
-  
-
 end
 
 function CharTrain:draw()

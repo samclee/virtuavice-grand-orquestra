@@ -1,12 +1,18 @@
 local Roof3 = {}
 
-local TeraQuad = lg.newQuad(0,0,72,72,432,72)
-local NemeQuad = lg.newQuad(144,0,72,72,432,72)
-local FreyaQuad = lg.newQuad(288,0,72,72,432,72)
+local TeraQuad = lg.newQuad(0,0,72,72,charsheet:getWidth(),72)
+local NemeQuad = lg.newQuad(144,0,72,72,charsheet:getWidth(),72)
+local FreyaQuad = lg.newQuad(288,0,72,72,charsheet:getWidth(),72)
 
 function Roof3:enter(from)
   s:lookAt(600, 160)
-  gs.push(states.convo, convos[8])
+  s:setColorTo({0,0,0,1})
+  s:fadeTo({0,0,0,0},2)
+  ti.after(3, function () gs.push(states.convo, convos[11]) end)
+end
+
+function Roof3:update(dt)
+  s:update(dt)
 end
 
 function Roof3:resume()

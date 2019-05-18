@@ -1,6 +1,6 @@
 local Roof = {}
 
-local Boss = BossChar:new({x = 800, y = 159, convo = 3})
+local Boss = BossChar:new({x = 800, y = 159, convo = 5})
 
 local Party = CharTrain:new({153, 159, 153, 159, 153, 159})
 
@@ -9,9 +9,9 @@ function Roof:enter()
   s:fadeTo({0,0,0,0},2)
 end
 
-function Roof:resume()
+function Roof:resume(from, retMsg)
   if retMsg == 'boss' then
-    spiralOut('battle1', 4, 'roof2')
+    spiralOut('battle1', 6, 'roof2')
   end
 end
 
