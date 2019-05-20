@@ -77,23 +77,28 @@ end
 convos[6] = function()
   msg '=BATTLE1 START='
 
-  option 'Tera + Neme'
-  option 'Tera + Freya'
-  menu 'Which combo should attack?'
+  portrait 'tera1'
+  name 'Tera'
+  msg 'Neme, it\'s time to use...'
+  msg 'THAT'
 
-  if selection 'Tera + Neme' then
-    msg 'Blaze Cross!'
-    
-    wait(2)
-    atk({1,2})
-    msg('Critical damage!')
-  elseif selection 'Tera + Freya' then
-    msg 'Celestial Arrow!'
-    
-    wait(2)
-    atk({1,3})
-    msg('Highly effective!')
-  end
+  portrait 'freya1'
+  name 'Freya'
+  msg 'You don\'t mean????'
+
+  portrait 'neme1'
+  name 'Neme'
+  msg 'Super-hyper-ultra-mega attack'
+
+  portrait 'tera1'
+  name 'Tera'
+  msg 'Blaze Cross!'
+  
+  portrait(nil)
+  wait(2)
+  atk({1,2})
+  msg('*Critical damage!')
+
 
   -- MUST RESET
   wait(nil)
@@ -165,7 +170,11 @@ convos[10] = function()
   name 'Tera'
   
   msg '=BATTLE2 START='
-  msg 'poooooooooooooooooooooooop'
+  msg 'write this battle later'
+
+  portrait 'boss1'
+  name 'Boss'
+  msg 'damn well you beat me'
 end
 
 convos[11] = function()
