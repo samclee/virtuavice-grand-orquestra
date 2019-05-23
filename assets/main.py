@@ -1,10 +1,12 @@
 from PIL import Image, ImageDraw
 import os
 
-orig = Image.open('charsheetOriginal.png')
-pod = Image.open('bookpodium.png')
-augmented = Image.new('RGBA', (504, 72))
-augmented.paste(orig, (0, 0))
-augmented.paste(pod, (432, 0))
+def resz(fname, dim):
+  f, e = os.path.splitext(fname)
+  im = Image.open(fname)
+  out = im.resize((dim, dim))
+  name = str(dim) + 'x' + str(dim)
+  out.save(f + '_' + name + '.png', 'PNG')
 
-augmented.save('charsheet.png', 'PNG')
+resz('portraits/neme1.jpg', 180)
+resz('portraits/tera1.jpg', 180)
