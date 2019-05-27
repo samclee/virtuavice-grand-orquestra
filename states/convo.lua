@@ -20,6 +20,14 @@ function Convo:enter(from, script, retMsg)
       'portrait',
       'name'
     })
+    :addPreset('tera', {
+      portrait ='tera1',
+      name = 'Tera'
+    })
+    :addPreset('neme', {
+      portrait ='neme1',
+      name = 'Neme'
+    })
 
   self:interpretPkg(dialog:next())
 end

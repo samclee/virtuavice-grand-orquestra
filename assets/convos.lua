@@ -1,13 +1,9 @@
 local convos = {}
 
 convos[1] = function()
-  portrait 'tera1'
-  name 'Tera'
-  msg 'aw shit time for adventure'
+  tera 'aw shit time for adventure'
 
-  portrait 'neme1'
-  name 'Neme'
-  msg 'gonna kill that demon king'
+  neme 'gonna kill that demon king'
 
   portrait 'freya1'
   name 'Freya'
