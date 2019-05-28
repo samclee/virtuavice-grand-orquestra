@@ -57,6 +57,7 @@ Portal = require 'classes.Portal'
 
 
 BattleChar = require'classes.BattleChar'
+BattleBoss = require 'classes.BattleBoss'
 
 states = {}
 statenames = {'opening', 'title', 'outdoor', 'battle1', 'battle2', 'convo', 'credits', 'opening2', 'indoor', 'roof', 'roof2','roof3'}
@@ -70,7 +71,7 @@ function love.load()
   fonts.big = assets.v(35)
   fonts.dialog = assets.v(24)
   fonts.name = assets.v(16)
-  gs.switch(states.outdoor)
+  gs.switch(states.roof)
 end
 
 function love.update(dt)

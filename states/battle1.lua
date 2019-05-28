@@ -10,6 +10,8 @@ local party = {
   BattleChar:new({x = 200, y = 500, idle = anims.freya_idle, atk = anims.freya_walk, max_hp = 60})
 }
 
+local boss = BattleBoss:new({x = 600, y = 400, spr = assets.bossSpr, max_hp = 100})
+
 function Battle1:boxSleepFor(n)
   if n == nil then return end
 
@@ -24,7 +26,7 @@ function Battle1:doAtks(atkers)
     if i < 4 then
       party[i]:doAtk()
     else
-
+      boss:doAtk()
     end
   end
 end
@@ -100,6 +102,8 @@ function Battle1:draw()
   for _,c in pairs(party) do
     c:draw()
   end
+
+  boss:draw()
 
   box:draw()
   s:off()

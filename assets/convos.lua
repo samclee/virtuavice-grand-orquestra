@@ -107,8 +107,14 @@ convos[6] = function()
   name 'Boss'
   msg 'lmao as if'
   msg 'ur ded kid'
-  msg 'i am the boss hehehehehehe'
+  msg 'FINALE METEOR CRUSH'
 
+  wait(2)
+  atk({4})
+  msg('DIE')
+
+  wait(nil)
+  atk(nil)
   portrait 'tera1'
   name 'Tera'
   msg 'damn we fukn dead'
