@@ -60,7 +60,7 @@ BattleChar = require'classes.BattleChar'
 BattleBoss = require 'classes.BattleBoss'
 
 states = {}
-statenames = {'opening', 'title', 'outdoor', 'battle1', 'battle2', 'convo', 'credits', 'opening2', 'indoor', 'roof', 'roof2','roof3'}
+statenames = {'opening', 'title', 'outdoor', 'battle1', 'convo', 'credits', 'opening2', 'indoor', 'roof', 'roof2','roof3'}
 for _,n in pairs(statenames) do
   states[n] = require ('states.'.. n)
 end

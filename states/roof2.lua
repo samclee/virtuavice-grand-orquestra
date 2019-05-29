@@ -6,7 +6,6 @@ local Freya = TalkChar:new({x = 370, y = 220, w = 72, h = 72, convo = 8, sprx = 
 
 
 local Boss = BossChar:new({x = 800, y = 159, convo = 9})
-
 function Roof2:enter()
   s:setColorTo({0,0,0,1})
   s:fadeTo({0,0,0,0},2)

@@ -99,6 +99,7 @@ function Battle1:draw()
   lg.rectangle('fill', 0, 0, 800, 600)
 
   lg.setColor(1,1,1)
+  lg.draw(assets.roof,-200,260,0,2.8,2.8)
   for _,c in pairs(party) do
     c:draw()
   end

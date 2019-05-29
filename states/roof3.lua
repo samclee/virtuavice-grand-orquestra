@@ -4,6 +4,7 @@ local TeraQuad = lg.newQuad(0,0,72,72,charsheet:getWidth(),72)
 local NemeQuad = lg.newQuad(144,0,72,72,charsheet:getWidth(),72)
 local FreyaQuad = lg.newQuad(288,0,72,72,charsheet:getWidth(),72)
 
+
 function Roof3:enter(from)
   s:lookAt(600, 160)
   s:setColorTo({0,0,0,1})
@@ -30,6 +31,7 @@ s:on()
   lg.draw(assets.sheets.charsheet, TeraQuad, 600,160, 0,1.2, 1.2, 43,43)
   lg.draw(assets.sheets.charsheet, NemeQuad, 480,140, 0,1.2, 1.2, 43,43)
   lg.draw(assets.sheets.charsheet, FreyaQuad, 500,220, 0,1.2, 1.2, 43,43)
+  lg.draw(assets.bossSpr, 800, 159, 0, 1, 1, 150, 150)
 s:off()
 end
 
