@@ -54,6 +54,26 @@ function Battle1:enter(from, convo_num, to)
       'dmg',
       'wait'
     })
+    :addPreset('tera', {
+      portrait ='tera1',
+      name = 'Tera'
+    })
+    :addPreset('neme', {
+      portrait ='neme1',
+      name = 'Neme'
+    })
+    :addPreset('freya', {
+      portrait ='freya1',
+      name = 'Freya'
+    })
+    :addPreset('boss', {
+      portrait ='boss1',
+      name = 'Freya'
+    })
+    :addPreset('geralk', {
+      portrait ='boss1',
+      name = 'Geralk'
+    })
 
   self:interpretPkg(dialog:next())
 end

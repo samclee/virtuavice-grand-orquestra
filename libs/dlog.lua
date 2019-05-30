@@ -72,7 +72,8 @@ local function new(font, x, y, w, h)
 end
 
 function dlog:setMsg(msg, choices)
-	self.msg = msg
+	--print(msg)
+  self.msg = msg
   self.cur_char = 0
   self.msg_len = string.len(msg)
   self.choices = choices

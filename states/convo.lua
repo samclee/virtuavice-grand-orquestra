@@ -28,6 +28,18 @@ function Convo:enter(from, script, retMsg)
       portrait ='neme1',
       name = 'Neme'
     })
+    :addPreset('freya', {
+      portrait ='freya1',
+      name = 'Freya'
+    })
+    :addPreset('boss', {
+      portrait ='boss1',
+      name = 'Demon King'
+    })
+    :addPreset('geralk', {
+      portrait ='boss1',
+      name = 'Geralk'
+    })
 
   self:interpretPkg(dialog:next())
 end
