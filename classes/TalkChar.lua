@@ -24,7 +24,6 @@ end
 function TalkChar:check(player_pos)
   if self.talked == false and self.pos:dist(player_pos) < self.r then
     self.talked = true
-    print('Talking to this person initiated convo ' .. self.convo)
     gs.push(states.convo, convos[self.convo])
   end
 end

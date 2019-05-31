@@ -5,7 +5,7 @@ local floor = 3000
 local st = [[
 Fifty years ago, a rebellion started to brew against the Alcoast Kingdom. Dissatisfied with their King, the group preached of a world that looked more equal and kind than the current one. Inevitably, the rebellion quickly resorted to violence and civil war broke out.
 
-A King’s Cleric by the name of Geralk, found himself caught in a conflicting space of wanting to help those in need and also being forbidden to by the armies he fought with.
+A King\'s Cleric by the name of Geralk, found himself caught in a conflicting space of wanting to help those in need and also being forbidden to by the armies he fought with.
 
 After being betrayed by the Royal Army and witnessing the hypocritical horrors of the rebellion, Geralk had no other choice but to take matters into his own hands.
 
@@ -22,7 +22,7 @@ function Opening2:update(dt)
   s:lookAt(400, camy)
   
   if camy < 3000 then
-    camy = camy + 0.5
+    camy = camy + 1
   end
 
   if input:pressed 'action' then

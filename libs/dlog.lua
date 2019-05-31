@@ -22,15 +22,20 @@ end
 
 dlog.drawChoices = function(self)
   lg.setFont(self.font)
-  local m1, m2 = self.choices[1], self.choices[2]
-  if self.cur_choice == 1 then
-    m1 = '[' .. m1 .. ']'
-  else
-    m2 = '[' .. m2 .. ']'
-  end
+  local m1, m2, m3 = self.choices[1], self.choices[2], self.choices[3]
 
-  lg.printf(m1, self.offset + self.x + self.padding_x, self.y + 106 + self.padding_y, self.w - 2 * self.padding_x - self.offset, 'left')
-  lg.printf(m2, self.offset + self.x + self.padding_x, self.y + 106 + self.padding_y, self.w - 2 * self.padding_x - self.offset, 'right')
+  if self.cur_choice == 1 then
+    m1 = '>>' .. m1
+  elseif self.cur_choice == 2 then
+    m2 = '>>' .. m2
+  elseif self.cur_choice == 3 then
+    m3 = '>>' .. m3
+  end
+  
+
+  lg.printf(m1, self.offset + self.x + self.padding_x, self.y + self.padding_y, self.w - 2 * self.padding_x - self.offset, 'left')
+  lg.printf(m2, self.offset + self.x + self.padding_x, self.y + 60 + self.padding_y, self.w - 2 * self.padding_x - self.offset, 'left')
+  lg.printf(m3, self.offset + self.x + self.padding_x, self.y + 120 + self.padding_y, self.w - 2 * self.padding_x - self.offset, 'left')
 end
 
 dlog.drawPortrait = function(self)

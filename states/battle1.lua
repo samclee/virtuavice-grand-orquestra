@@ -3,6 +3,7 @@ local Battle1 = {}
 local dialog
 local box
 local choices = {}
+local loc_choice = 0
 
 local party = {
   BattleChar:new({x = 100, y = 300, idle = anims.tera_idle, atk = anims.tera_walk, max_hp = 70}),
@@ -88,11 +89,13 @@ function Battle1:update(dt)
   box:update()
   -- input
   -- cursor movement
-  if input:pressed 'left' then
-    box:setChoice(1)
-  elseif input:pressed 'right' then
-    box:setChoice(2)
+  if input:pressed 'up' then
+    loc_choice = (loc_choice - 1) % 3
+  elseif input:pressed 'down' then
+    loc_choice = (loc_choice + 1) % 3
   end
+
+  box:setChoice(loc_choice+1)
 
   -- choice selection
   if input:pressed 'action' then

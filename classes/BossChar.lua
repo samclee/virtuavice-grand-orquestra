@@ -26,7 +26,6 @@ end
 
 function BossChar:check(player_pos)
   if self.pos:dist(player_pos) < 200 then
-    print('Talking to this person initiated convo ' .. self.convo)
     gs.push(states.convo, convos[self.convo], 'boss')
   end
 end
