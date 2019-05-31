@@ -135,7 +135,8 @@ convos[5] = function()
 end
 
 convos[6] = function()
-  msg '=BATTLE START='
+  msg '*The party attacks!'
+  msg 'What will the party do?'
 
   option 'Now you\'ve forced our hand.'
   option 'You\'re a monster!'
@@ -191,7 +192,7 @@ convos[6] = function()
 
   portrait(nil)
   msg '*The Demon King attacks!'
-  msg '*The Demon King uses \"You have no hope\"'
+  msg '*The Demon King uses \n\"You have no hope\"'
 
   wait(2)
   atk({4})
@@ -300,15 +301,73 @@ convos[9] = function()
 end
 
 convos[10] = function()
-  portrait 'tera1'
-  name 'Tera'
-  
-  msg '=BATTLE2 START='
-  msg 'write this battle later'
+  msg '*The party attacks once more!'
+  msg 'What will the party do?'
 
-  portrait 'boss1'
-  name 'Boss'
-  msg 'damn well you beat me'
+  option 'This isn\'t who you are.'
+  option 'I forgive you.'
+  option 'Your power will fade.'
+  menu ''
+
+  msg '*Freya uses \"Compassion\"!'
+  wait(2)
+  atk({3})
+  freya  'You haven\'t always been like this.'
+  wait(nil)
+  atk(nil)
+  freya 'There\'s another path for you that maybe you just can\'t see...'
+
+  portrait(nil)
+  option 'This isn\'t who you are.'
+  option 'I forgive you.'
+  option 'Your power will fade.'
+  menu ''
+
+  msg '*Tera uses \"Forgiveness\"!'
+  wait(2)
+  atk({1})
+  tera 'You\'ve caused me a lot of pain.'
+  wait(nil)
+  atk(nil)
+  tera 'There will always be things I can never get back because of you.'
+  tera 'And I forgive you.'
+  tera 'You have a chance now to fix that...'
+
+  portrait(nil)
+  option 'This isn\'t who you are.'
+  option 'I forgive you.'
+  option 'Your power will fade.'
+  menu ''
+
+  msg '*Neme uses \"Hope\"!'
+  wait(2)
+  atk({2})
+  neme 'You struggle with the same obstacle that I do.'
+  wait(nil)
+  atk(nil)
+  neme 'Our magic is amplified by how we feel.'
+  neme 'And yours is fueled by your rage and hurt.'
+  neme 'One day you won\'t be able to be angry anymore.'
+  neme 'Why can\'t that time be now...'
+
+  portrait(nil)
+  option 'Geralk'
+  option ''
+  option ''
+  menu ''
+
+  tera '.......Geralk.'
+
+  portrait(nil)
+  msg '*The Demon King is confused!'
+  msg '*The Demon King uses \n\"What did you just say?\"'
+
+  geralk 'Why are you all so quick to treat me with kindness after what I\'ve done?!'
+  geralk 'I defeated you almost instantly and you speak to me now with niceties.'
+  geralk 'That name...'
+  geralk 'I haven\'t heard it in decades.'
+  geralk 'Is this what I\'ve become?'
+  geralk 'I can\'t even recognize my own name anymore.'
 end
 
 convos[11] = function()

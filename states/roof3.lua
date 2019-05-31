@@ -17,7 +17,7 @@ function Roof3:update(dt)
 end
 
 function Roof3:resume()
-  gs.switch(states.credits)
+  fadeOut('credits',2)
 end
 
 function Roof3:draw()
