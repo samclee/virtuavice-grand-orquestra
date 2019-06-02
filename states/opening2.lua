@@ -47,7 +47,7 @@ function Opening2:draw()
   lg.draw(assets.mtn2,0,floor-300+230,0,1,0.7)
   lg.setColor(1,1,1)
   lg.draw(assets.mtn,0,floor-300+300,0,1,0.7)
-  lg.draw(assets.grs,0,floor-300)
+  lg.draw(assets.grs2,0,floor-300)
 
 
   s:off()

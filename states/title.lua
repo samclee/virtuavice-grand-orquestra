@@ -24,10 +24,9 @@ function Title:update(dt)
 
   mx2 = mx2 - 0.1
   mx = mx - 0.25
-  gx = gx - .5
+  gx = gx - 0.5
 
-  if gx < -800 then gx = 0 end
-
+  if gx < -1600 then gx = 0 end
 end
 
 function Title:draw()
@@ -40,7 +39,7 @@ s:on()
   lg.draw(assets.mtn2,mx2,230,0,1,0.7)
   lg.setColor(1,1,1)
   lg.draw(assets.mtn,mx,300,0,1,0.7)
-  lg.draw(assets.grs,gx,0)
+  lg.draw(assets.grs2,gx,0)
 
   if showStart then
     lg.setColor(0,0,0)

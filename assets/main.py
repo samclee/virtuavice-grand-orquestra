@@ -1,18 +1,10 @@
 from PIL import Image, ImageDraw
 import os
 
-f, e = os.path.splitext('vgo_logo.png') #<name><.ext>
 
-im = Image.open('logo.png')
-im = im.convert('RGBA')
-pixels = im.getdata()
+im = Image.open('grass.png')
+newim = Image.new('RGBA', (3200,600))
+newim.paste(im, (0, 0))
+newim.paste(im, (1600, 0))
 
-newPixels = []
-for p in pixels:
-  if p[3] > 0:
-    newPixels.append((0, 0, 0, 255))
-  else:
-    newPixels.append(p)
-
-im.putdata(newPixels)
-im.save(f + '_clear.png', 'PNG')
+newim.save('grs2.png', 'PNG')

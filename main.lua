@@ -72,7 +72,7 @@ function love.load()
   fonts.big = assets.v(35)
   fonts.dialog = assets.v(24)
   fonts.name = assets.v(16)
-  gs.switch(states.opening)
+  gs.switch(states.opening2)
 end
 
 function love.update(dt)
