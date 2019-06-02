@@ -1,7 +1,6 @@
 local Credits = {}
 
 local y = 610
-local lerp_started = false
 local cr =[[
   Story and Writing
   Grace Willhoite
@@ -13,7 +12,7 @@ local cr =[[
   Angie Ni
   Kristen Shih
   Angie Ta
-  Grace Wilhoite
+  Grace Willhoite
 
   Music
   Kyle Chuang
@@ -34,13 +33,12 @@ function Credits:enter(from)
   lg.setFont(fonts.dialog)
   s:setColorTo({1,1,1,0})
   s:reset()
-  print(s._x,s._y)
 end
 
 function Credits:update(dt)
   s:update(dt)
   if y > -968 then
-    y = y - .5
+    y = y - 1
   end
 end
 

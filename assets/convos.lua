@@ -46,7 +46,7 @@ convos[3] = function()
   tera 'Can never have too many potions Neme.'
   tera 'That\'s why I never use a single one ever.'
 
-  neme '.....I see.'
+  neme '.....Uh, okay.'
 end
 
 convos[4] = function()
@@ -65,7 +65,6 @@ convos[5] = function()
 
   tera 'Demon King, we\'ve come to defeat you.'
 
-  boss 'I see'
   boss 'If you intend to defy me...'
   boss 'then DIE.'
 end
@@ -200,7 +199,8 @@ convos[9] = function()
   boss 'Save me?'
   boss 'What nonsense.'
 
-  tera 'Okay team.'
+  tera 'Your magic is powerful.'
+  tera 'But the strength of our bonds is unstoppable!'
   tera 'Let\'s finish this!'
 end
 
@@ -259,7 +259,13 @@ convos[10] = function()
 
   tera 'Even you...'
   tera 'Geralk.'
-  geralk '!'
+  geralk '!!!'
+
+  portrait(nil)
+  msg '*Demon King is stunned!'
+  msg '*Demon King\'s will to fight is disappearing!'
+  msg '*The battle ends!'
+  
 end
 
 convos[11] = function()
@@ -271,7 +277,7 @@ convos[11] = function()
   freya 'But everyone deserves a second chance.'
   geralk 'Even me?'
   neme 'Even you.'
-  geralk '...I see'
+  geralk '...I see.'
   geralk 'Thank you adventurers.'
 end
 

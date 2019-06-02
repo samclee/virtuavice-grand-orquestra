@@ -9,7 +9,6 @@ function CharTrain:initialize(p)
 end
 
 function CharTrain:update(dt, dx, dy)
-  print(self.chars[1].pos)
   if dx == 0 and dy == 0 then
     self.chars[2]:beIdle()
     self.chars[3]:beIdle()

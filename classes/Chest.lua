@@ -24,10 +24,6 @@ end
 
 function Chest:draw()
   lg.draw(self.cur_spr, self.pos.x, self.pos.y, 0, self.scale, self.scale, self.w/2, self.h/2)
-  lg.setColor(1,0,0)
-  lg.circle('line', self.pos.x, self.pos.y, 100)
-  lg.setColor(1,1,1)
-
 end
 
 return Chest 
