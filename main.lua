@@ -51,6 +51,7 @@ anims.freya_walk = anim8.newAnimation(char_grid(5,1, 6,1), 0.2)
 OverworldChar = require 'classes.OverworldChar'
 CharTrain = require 'classes.CharTrain'
 TalkChar = require 'classes.TalkChar'
+Chest = require 'classes.Chest'
 BossChar = require 'classes.BossChar'
 
 Portal = require 'classes.Portal'
@@ -71,7 +72,7 @@ function love.load()
   fonts.big = assets.v(35)
   fonts.dialog = assets.v(24)
   fonts.name = assets.v(16)
-  gs.switch(states.opening2)
+  gs.switch(states.opening)
 end
 
 function love.update(dt)

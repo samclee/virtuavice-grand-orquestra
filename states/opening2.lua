@@ -1,15 +1,15 @@
 local Opening2 = {}
 local camy = 300
-local floor = 3000
+local floor = 1818
 
 local st = [[
-Fifty years ago, a rebellion started to brew against the Alcoast Kingdom. Dissatisfied with their King, the group preached of a world that looked more equal and kind than the current one. Inevitably, the rebellion quickly resorted to violence and civil war broke out.
+Fifty years ago, in the kingdom of Alcoast, civil war raged across the countryside.
 
-A King's Cleric by the name of Geralk, found himself caught in a conflicting space of wanting to help those in need and also being forbidden to by the armies he fought with.
+Disgusted by this conflict, a mage by the name of Geralk used dark magic to conquer the entire land. 
 
-After being betrayed by the Royal Army and witnessing the hypocritical horrors of the rebellion, Geralk had no other choice but to take matters into his own hands.
+His dictatorship and dark magic earned him the title, "Demon King."
 
-Fifty years later, Geralk has been given another name: “The Demon King”. He lays waste up and down the entirety of the Alcoast. Another group of heroes with a more hopeful fate now approach his lair in an attempt to put an end to his absolute rule...
+Today, three heroes set out to defeat the Demon King and end his rule.
 ]]
 
 function Opening2:enter(from)
@@ -21,7 +21,7 @@ function Opening2:update(dt)
   s:update(dt)
   s:lookAt(400, camy)
   
-  if camy < 3000 then
+  if camy < floor then
     camy = camy + 0.75
   end
 
@@ -43,13 +43,18 @@ function Opening2:draw()
 
 
   -- draw floor
+  lg.setColor(.7,.7,.7)
+  lg.draw(assets.mtn2,0,floor-300+230,0,1,0.7)
+  lg.setColor(1,1,1)
+  lg.draw(assets.mtn,0,floor-300+300,0,1,0.7)
+  lg.draw(assets.grs,0,floor-300)
 
 
   s:off()
 end
 
 function Opening2:keypressed(k)
-
+  print(camy)
 end
 
 return Opening2

@@ -16,9 +16,6 @@ end
 
 function TalkChar:draw()
   lg.draw(charsheet, self.quad, self.pos.x, self.pos.y, 0, self.scale, self.scale, self.w/2, self.h/2)
-  --[[lg.setColor(1,0,0)
-  lg.circle('line',self.pos.x, self.pos.y,self.r)
-  lg.setColor(1,1,1)]]
 end
 
 function TalkChar:check(player_pos)

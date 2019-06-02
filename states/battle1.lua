@@ -69,7 +69,7 @@ function Battle1:enter(from, convo_num, to)
     })
     :addPreset('boss', {
       portrait ='boss1',
-      name = 'Freya'
+      name = 'Demon King'
     })
     :addPreset('geralk', {
       portrait ='boss1',

@@ -48,4 +48,10 @@ s:on()
 s:off()
 end
 
+function Roof2:keypressed(k)
+  if k == 'c' then
+    gs.push(states.convo, convos[4])
+  end
+end
+
 return Roof2

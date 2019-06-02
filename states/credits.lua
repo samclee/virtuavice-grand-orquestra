@@ -4,7 +4,7 @@ local y = 610
 local lerp_started = false
 local cr =[[
   Story and Writing
-  Grace Wilhoite
+  Grace Willhoite
 
   Programming
   Sam Lee
@@ -32,7 +32,9 @@ local cr =[[
 function Credits:enter(from)
   print('entered credits')
   lg.setFont(fonts.dialog)
+  s:setColorTo({1,1,1,0})
   s:reset()
+  print(s._x,s._y)
 end
 
 function Credits:update(dt)

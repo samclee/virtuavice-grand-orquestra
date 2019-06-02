@@ -1,13 +1,12 @@
 local Indoor = {}
 
-local Party = CharTrain:new({857, 1249, 857, 1249, 857, 1249})
+local Party = CharTrain:new({769, 1717, 769, 1717, 769, 1717})
 local podiums = {
-  TalkChar:new({x = 450, y = 964, w = 72, h = 72, convo = 2, sprx = 432}),
-  TalkChar:new({x = 1142, y = 782, w = 72, h = 72, convo = 3, sprx = 432}),
-  TalkChar:new({x = 1511, y = 504, w = 72, h = 72, convo = 4, sprx = 432})
+  Chest:new({x = 423, y = 1352, convo = 2}),
+  Chest:new({x = 867, y = 996, convo = 3}),
 }
 
-local roofPortal = Portal:new({x = 1129, y = 246, r = 25, to = 'roof'})
+local roofPortal = Portal:new({x = 1353, y = 1011, r = 25, to = 'roof'})
 
 function Indoor:enter()
 

@@ -22,10 +22,6 @@ end
 
 function BattleChar:draw()
   self.cur_anim:draw(charsheet, self.x, self.y, 0, self.scale, self.scale, self.w/2, self.h/2)
-
-  --[[lg.setColor(1,0,0)
-  lg.circle('line',self.x, self.y, 50)
-  lg.setColor(1,1,1)]]
 end
 
 function BattleChar:take_dmg(d)

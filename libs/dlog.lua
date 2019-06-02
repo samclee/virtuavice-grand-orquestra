@@ -100,7 +100,7 @@ function dlog:update()
   if not self.active then return end
 
   self.cur_time = self.cur_time + 1
-  if self.cur_time > 2 then
+  if self.cur_time > 1 then
     self.cur_time = 0
     if self.cur_char < self.msg_len then
       self.cur_char = self.cur_char + 1

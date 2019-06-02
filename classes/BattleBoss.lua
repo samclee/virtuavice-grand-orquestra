@@ -14,20 +14,9 @@ function BattleBoss:initialize(p)
   self.scale = 1.2
 end
 
-function BattleBoss:update(dt)
-
-end
 
 function BattleBoss:draw()
   lg.draw(self.spr, self.x, self.y, 0, self.scale, self.scale, self.w/2, self.h/2)
-
-  --[[lg.setColor(1,0,0)
-  lg.circle('line',self.x, self.y, 50)
-  lg.setColor(1,1,1)]]
-end
-
-function BattleBoss:take_dmg(d)
-  self.hp = self.hp - d
 end
 
 function BattleBoss:doAtk()

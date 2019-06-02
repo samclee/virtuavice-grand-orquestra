@@ -1,3 +1,3 @@
 function love.conf(t)
-  t.window.title = 'Game Name????????'
+  t.window.title = 'Virtuvice Grand Orquestra'
 end

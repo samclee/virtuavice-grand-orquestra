@@ -7,10 +7,11 @@ local mx, gx, mx2= 0,0,0
 function Title:enter(from)
   s:lookAt(400,300)
   s:setDraw(true)
+  lg.setFont(fonts.big)
   s:setColorTo({1,1,1,1})
   s:fadeTo({1,1,1,0}, 2)
 
-  handle = ti.every(0.5, function() showStart = not showStart end)
+  handle = ti.every(1, function() showStart = not showStart end)
 end
 
 function Title:update(dt)
@@ -42,7 +43,15 @@ s:on()
   lg.draw(assets.grs,gx,0)
 
   if showStart then
-    lg.setFont(fonts.big)
+    lg.setColor(0,0,0)
+    local w = 3
+    lg.printf('[Press any key to start]',-w,450-w,800,'center')
+    lg.printf('[Press any key to start]',w,450+w,800,'center')
+    lg.printf('[Press any key to start]',-w,450+w,800,'center')
+    lg.printf('[Press any key to start]',w,450-w,800,'center')
+    lg.printf('[Press any key to start]',0,450+w,800,'center')
+    lg.printf('[Press any key to start]',0,450-w,800,'center')
+    lg.setColor(1,1,1)
     lg.printf('[Press any key to start]',0,450,800,'center')
   end
 
