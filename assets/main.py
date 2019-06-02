@@ -1,12 +1,18 @@
 from PIL import Image, ImageDraw
 import os
 
-def resz(fname, dim):
-  f, e = os.path.splitext(fname)
-  im = Image.open(fname)
-  out = im.resize((dim, dim))
-  name = str(dim) + 'x' + str(dim)
-  out.save(f + '_' + name + '.png', 'PNG')
+f, e = os.path.splitext('vgo_logo.png') #<name><.ext>
 
-resz('portraits/neme1.jpg', 180)
-resz('portraits/tera1.jpg', 180)
+im = Image.open('logo.png')
+im = im.convert('RGBA')
+pixels = im.getdata()
+
+newPixels = []
+for p in pixels:
+  if p[3] > 0:
+    newPixels.append((0, 0, 0, 255))
+  else:
+    newPixels.append(p)
+
+im.putdata(newPixels)
+im.save(f + '_clear.png', 'PNG')
